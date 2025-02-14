@@ -6,7 +6,6 @@ var builder = WebApplication.CreateBuilder(args);
 
 var JwtSettings = builder.Configuration.GetSection("JwtSettings");
 
-// Kimlik doğrulama ve JWT yapılandırması
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -25,38 +24,32 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
-// CORS ayarlarını yapılandırma
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(policy =>
     {
-        policy.AllowAnyOrigin()  // Bu, her türlü kaynaktan gelen isteklere izin verir
-              .AllowAnyHeader()  // Her türlü header (başlık) kabul edilir
-              .AllowAnyMethod(); // Herhangi bir HTTP metodu (GET, POST, vb.) kabul edilir
+        policy.AllowAnyOrigin()
+              .AllowAnyHeader()
+              .AllowAnyMethod();
     });
 });
 
-// API controller'larını ekle
+
 builder.Services.AddControllers();
 
-// Swagger/OpenAPI desteği ekle
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Swagger'ı uygulamaya dahil et
 app.UseSwagger();
 app.UseSwaggerUI();
 
 app.UseCors();
 
-// Kimlik doğrulama ve yetkilendirme middleware'lerini ekle
 app.UseAuthentication();
 app.UseAuthorization();
 
-
-// API controller'larını haritalandırma
 app.MapControllers();
 
-app.Run(); // Uygulamayı çalıştır
+app.Run();
 

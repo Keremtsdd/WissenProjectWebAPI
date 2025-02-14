@@ -203,7 +203,6 @@ public class RentaCarController : ControllerBase
             return NotFound(new { message = "Araç bulunamadı" });
         }
 
-        // Aracı silme işlemi burada yapılacak.
         Car.Remove(car);
         return Ok(new { message = "Araç başarıyla silindi" });
     }

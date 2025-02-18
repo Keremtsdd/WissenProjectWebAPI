@@ -1,1 +1,2 @@
-URL;wissenrentacarapi.runasp.net
+WebAPI URL ;
+http://wissenrentacarapi.runasp.net/api/RentaCar

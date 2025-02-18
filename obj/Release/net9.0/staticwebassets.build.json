@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "ewBUM0JhURA7i0FXB1/9E8NwpHTkEZ16K9VSkjNNjYg=",
+  "Source": "WissenWebAPI",
+  "BasePath": "_content/WissenWebAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
